@@ -1,7 +1,7 @@
-def is_odd?(num)
+def odd?(num)
   num.abs % 2 != 0
 end
 
-p is_odd?(3)
-p is_odd?(10)
-p is_odd?(-11)
+p odd?(3)
+p odd?(10)
+p odd?(-11)
