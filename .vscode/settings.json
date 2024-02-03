@@ -2,6 +2,6 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp"
+    "editor.defaultFormatter": "rubocop.vscode-rubocop"
   }
 }
