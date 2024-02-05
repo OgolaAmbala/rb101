@@ -5,4 +5,4 @@ def calculate_age(name = 'Teddy')
   puts "#{name} is #{age} years old"
 end
 
-calculate_age('James')
+calculate_age
