@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-puts  'What is the bill?'
+puts 'What is the bill?'
 bill_amount = gets.chomp.to_f.round
 
 puts 'What is the tip percentage?'
