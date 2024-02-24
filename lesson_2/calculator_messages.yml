@@ -1,0 +1,6 @@
+welcome: "Welcome to Calculater! Enter your name:"
+valid_name: "Make sure you use a valid name."
+first_number: "What's the first number?"
+number_error: "Hmm... that doesn't look like a valid number"
+second_number: "What's the second number?"
+repeat_calculation: "Do you want to perform another calculation? (Y to calculate again)"

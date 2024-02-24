@@ -5,6 +5,9 @@
 # perform the operation on the two numbers
 # output the result
 
+require 'yaml'
+MESSAGES = YAML.load_file('calculator_messages.yml')
+
 def prompt(message)
   puts("=> #{message}")
 end
@@ -13,8 +16,8 @@ def valid_number?(num)
   num.to_i != 0
 end
 
-def operation_to_message(op)
-  case op
+def operation_to_message(opo)
+  case opo
   when '1'
     'Adding'
   when '2'
@@ -25,7 +28,7 @@ def operation_to_message(op)
     'Dividing'
   end
 end
-prompt('Welcome to Calculater! Enter your name:')
+prompt(MESSAGES['welcome'])
 
 name = ''
 loop do
@@ -33,7 +36,7 @@ loop do
 
   break unless name.empty?
 
-  prompt('Make sure you use a valid name.')
+  prompt(MESSAGES['valid_name'])
 end
 
 prompt("Hi #{name}")
@@ -41,22 +44,22 @@ prompt("Hi #{name}")
 loop do
   number1 = ''
   loop do
-    prompt("What's the first number?")
+    prompt(MESSAGES['first_number'])
     number1 = gets.chomp
 
     break if valid_number?(number1)
 
-    prompt("Hmm... that doesn't look like a valid number")
+    prompt(MESSAGES['valid_number'])
   end
 
   number2 = ''
   loop do
-    prompt("What's the second number?")
+    prompt(MESSAGES['second_number'])
     number2 = gets.chomp
 
     break if valid_number?(number2)
 
-    prompt("Hmm... that doesn't look like a valid number")
+    prompt(MESSAGES['valid_number'])
   end
 
   operator_prompt = <<-MSG
@@ -92,7 +95,7 @@ loop do
 
   prompt("The answer is #{result}")
 
-  prompt('Do you want to perform another calculation? (Y to calculate again)')
+  prompt(MESSAGES['repeat_calculation'])
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
 end
