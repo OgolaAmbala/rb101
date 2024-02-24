@@ -18,13 +18,14 @@ def display_results(player, computer)
   elsif win?(computer, player)
     prompt('Computer Won')
   else
-    prompt("It's a tie")
+    prompt("It's a tie!")
   end
 end
+
 loop do
   choice = ''
   loop do
-    prompt("Choose one: #{VALID_CHOICES.join('')}")
+    prompt("Choose one: #{VALID_CHOICES.join(', ')}")
     choice = gets.chomp
 
     break if VALID_CHOICES.include?(choice)
